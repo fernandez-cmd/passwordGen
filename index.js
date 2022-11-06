@@ -176,7 +176,7 @@ const generatePw = ()=>{
     finalpw=[];
     while (finalpw.length < charLength.value){
     finalpw.push(pw[Math.floor(randomFloat() * pw.length)]);
-    if(finalpw.length == charLength.value){
+    if(finalpw.length == charLength.value + 1){
         break;
     };
     pwchars = []
