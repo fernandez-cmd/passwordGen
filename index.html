@@ -15,12 +15,12 @@
     <script src="index.js" defer> </script>
     <title>Password Generator</title>
 </head>
-<body>
+<body onmousemove="uncheckBoxes()" >
     <h1>Password Generator</h1>
 
-    <div class="wrapper">
+    <div class="wrapper" >
         <div class="final">
-            <div class="finalpw"><span>adhfl43034h</span></div>
+            <div class="finalpw"><span id="finalpw">adhfl43034h</span></div>
         </div>
         <div class="rest">
 
@@ -28,18 +28,18 @@
 
                 <div class="length"> 
                     <p>Character Length</p>
-                    <p>10</p>
+                    <p id="charAmount"></p>
                 </div>
 
-                <input type="range" min="1" max="25">
+                <input name="range" id="charLength" type="range" min="1" max="25" oninput="sliderChange(this.value)">
 
-                <label for="uppercase"><input type="checkbox" id="uppercase" name="uppercase">Include Uppercase Letters</label>
+                <label for="uppercase"><input type="checkbox" id="uppercase" onmousemove="uncheckBoxes()" oninput="checkBoxes()" name="uppercase">Include Uppercase Letters</label>
 
-                <label for="lowercase"><input type="checkbox" id="lowercase" name="lowercase">Include Lowercase Letters</label>
+                <label for="lowercase"><input type="checkbox" id="lowercase" onmousemove="uncheckBoxes()" oninput="checkBoxes()" name="lowercase">Include Lowercase Letters</label>
 
-                <label for="numbers"><input type="checkbox" id="numbers" name="numbers">Include Numbers</label>
+                <label for="numbers"><input type="checkbox" id="numbers"  onmousemove="uncheckBoxes()" oninput="checkBoxes()" name="numbers">Include Numbers</label>
 
-                <label for="symbols"> <input type="checkbox" id="symbols" name="symbols">Include Symbols</label>
+                <label for="symbols"> <input type="checkbox" id="symbols" onmousemove="uncheckBoxes()" oninput="checkBoxes()" name="symbols">Include Symbols</label>
                 
             </form>
             <div class="strengthwrap">
@@ -64,7 +64,7 @@
 
                 
             </div>
-            <button> Generate </button>
+            <button onclick="generatePw()"> Generate </button>
         </div>
 
 
